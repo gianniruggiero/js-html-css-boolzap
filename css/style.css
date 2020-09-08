@@ -31,7 +31,7 @@ main {
   left: 50%;
   transform: translatex(-50%);
   width: 80%;
-  max-width: 1200px;
+  max-width: 1500px;
   height: calc(100vh - 6%);
   background-color: #fff;
   border: 1px darkgrey solid;
@@ -45,16 +45,38 @@ main {
   border-right: 1px solid #d6d6d6;
 }
 
+.sideSX_top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaeaea;
+  height: 50px;
+  padding: 7px;
+}
+
+.sideSX_top_avatar {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.sideSX_top_console {
+  display: flex;
+  align-items: center;
+}
+
+.sideSX_top_console i {
+  color: #b1b1b1;
+  margin: 0 5px;
+}
+
 .sideSX_notifiche {
   background-color: #8edafc;
-  height: 60px;
+  height: 70px;
 }
 
 .sideSX_cerca {
   background-color: #fafafa;
   height: 45px;
 }
-
 
 .sideDX {
   width: 65%;
@@ -63,7 +85,7 @@ main {
   /* background-color: yellow; */
 }
 
-.sideSX_top, .sideDX_top{
+.sideDX_top{
   background-color: #eaeaea;
   height: 50px;
 }
