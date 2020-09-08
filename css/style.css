@@ -71,12 +71,12 @@ main {
   border-radius: 50%;
 }
 
-.sideSX_top_console {
+.sideSX_top_console, .sideDX_top_console {
   display: flex;
   align-items: center;
 }
 
-.sideSX_top_console i {
+.sideSX_top_console i, .sideDX_top_console i {
   color: #b1b1b1;
   margin: 0 7px;
 }
@@ -206,9 +206,28 @@ main {
   /* background-color: yellow; */
 }
 
-.sideDX_top{
+.sideDX_top {
+  display: flex;
+  justify-content: space-between;
   background-color: #eaeaea;
   height: 50px;
+  padding: 7px;
+}
+
+.wrap_utente {
+  display: flex;
+  align-items: center;
+}
+
+.accesso_chat {
+  color: #ababab;
+}
+
+
+.sideDX_top_avatar {
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .sideDX_main {
