@@ -8,3 +8,30 @@
 .template {
   display: none;
 }
+
+main {
+  height: 100vh;
+  position: relative;
+}
+
+.top {
+  background-color: #009688;
+  height: 15%;
+}
+
+.bottom {
+  background-color: #dadbd3;
+  height: 85%;
+}
+
+.wrap_general {
+  background-color: white;
+  width: 80%;
+  max-width: 1200px;
+  height: calc(100vh - 6%);
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translatex(-50%);
+  /* z-index: 10; */
+}
