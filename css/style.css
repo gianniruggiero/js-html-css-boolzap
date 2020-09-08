@@ -32,6 +32,7 @@ main {
   transform: translatex(-50%);
   width: 80%;
   max-width: 1500px;
+  min-width: 600px;
   height: calc(100vh - 6%);
   background-color: #fff;
   border: 1px darkgrey solid;
@@ -43,6 +44,7 @@ main {
   height: 100%;
   background-color: #fff;
   border-right: 1px solid #d6d6d6;
+  flex-shrink: 0;
 }
 
 .sideSX_top {
@@ -156,4 +158,16 @@ main {
 .sideDX_bottom{
   background-color: #f3eeea;
   height: 50px;
+}
+
+/* MEDIA QUERY SM */
+
+@media screen and (max-width: 991px) {
+
+  .sideSX {
+    width: 40%;
+  }
+  .sideDX {
+    width: 60%;
+  }
 }
