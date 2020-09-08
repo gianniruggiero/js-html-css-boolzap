@@ -171,9 +171,6 @@ main {
   border-radius: 50%;
 }
 
-.wrap_testi_ora_msg {
-
-}
 .sideSX_chat .wrap_testi_chat {
   display: flex;
   flex-direction: column;
@@ -266,6 +263,53 @@ main {
   font-size: 10px;
   color: #a2a2a2;
 }
+
+.sideDX_main {
+  padding-top: 50px;
+}
+
+.sideDX .wrap_messaggio {
+  padding: 5px 100px 5px 100px;
+  display: flex;
+}
+
+.sideDX .messaggio {
+  display: flex;
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+.sideDX .messaggio .text_messaggio {
+  font-size: 12px;
+  padding: 15px 5px 15px 15px;
+  font-weight: bold;
+
+}
+
+.sideDX .messaggio .ora_messaggio {
+  font-size: 8px;
+  font-weight: 300;
+  color: #cccccc;
+  padding: 0 5px 5px 0px;
+  align-self: flex-end;
+}
+
+.msg_ext {
+  justify-content: flex-start;
+}
+
+.msg_int {
+  justify-content: flex-end;
+}
+
+.msg_col_int {
+  background-color: #d5f9ba; */
+}
+
+.msg_col_ext {
+  background-color: #fff; */
+}
+
 /* MEDIA QUERY SM */
 
 @media screen and (max-width: 991px) {
