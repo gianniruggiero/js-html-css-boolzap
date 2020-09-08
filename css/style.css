@@ -45,6 +45,17 @@ main {
   border-right: 1px solid #d6d6d6;
 }
 
+.sideSX_notifiche {
+  background-color: #8edafc;
+  height: 60px;
+}
+
+.sideSX_cerca {
+  background-color: #fafafa;
+  height: 45px;
+}
+
+
 .sideDX {
   width: 65%;
   height: 100%;
