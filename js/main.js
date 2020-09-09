@@ -33,7 +33,8 @@ $(document).ready (function() {
       $(".sideDX_main").append(elemento);
       // pulisce l'input del messaggio
       $(".input_messaggio_new").val("");
-      // $(".sideDX_main").scrollTop = "2000";
+      // fa scorrere la sbarra verso il basso per visualizzare il nuovo messaggio
+      $(".sideDX_main").scrollTop(10000);
     }
   }
 
