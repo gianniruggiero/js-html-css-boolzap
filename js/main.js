@@ -18,13 +18,19 @@ $(document).ready (function() {
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
     function(event){
-      // controlla se ha digitato Enter
-      if (event.which == 13) {
+      console.log("event.which: " + event.which);
+      // controlla se ha digitato spazio come primo carattere nell'input
+      if (event.which == 32 && $(".input_messaggio_new").val() == " ") {
+        // pulisce l'input del messaggio
+        $(".input_messaggio_new").val("");
+      } else if (event.which == 13) {
+        // l'utente ha digitato invio da tasitera
         inviaMessaggio();
       };
     }
   )
 
+  // al click sull'icona invio, aggiunge il testo dell'input alla chat
   $(".wrap_send .fa-paper-plane").click (
     function () {
       inviaMessaggio();
@@ -35,7 +41,7 @@ $(document).ready (function() {
     // memorizza il testo digitato nell'input del messaggio
     var inputValue = $(".input_messaggio_new").val();
     // controlla se è stata inserita almeno una lettera nell'input
-    if (inputValue.length > 0) {
+    if (inputValue != "") {
       // seleziona e clona l'elemento del messaggio
       var elemento = $(".template > .msg_int").clone();
       // scrive nel clone il testo del messaggio preso dall'input
