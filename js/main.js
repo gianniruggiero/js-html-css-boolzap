@@ -1,5 +1,6 @@
 $(document).ready (function() {
 
+  // funziona che ritorna l'ora attuale nel formato H:MM
   function getOreMinuti() {
     var d = new Date();
     var h = d.getHours();
@@ -12,7 +13,6 @@ $(document).ready (function() {
     var ora = String(h)+":"+String(m);
     return ora;
   }
-
   console.log(getOreMinuti());
 
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
@@ -20,30 +20,35 @@ $(document).ready (function() {
     function(event){
       // controlla se ha digitato Enter
       if (event.which == 13) {
-        var inputValue = $(".input_messaggio_new").val();
-        console.log(inputValue);
-        if (inputValue.length > 0) {
-
-          var elemento = $(".template > .msg_int").clone();
-
-          elemento.find(".text_messaggio").text(inputValue);
-          elemento.find(".ora_messaggio").text(getOreMinuti());
-          console.log(elemento.find(".text_messaggio").text());
-          console.log("hasClass: " + elemento.hasClass("hide_template"));
-          // elemento.removeClass("hide_template");
-          // elemento.removeClass("template");
-          console.log("hasClass dopo il remove: " + elemento.hasClass("hide_template"));
-          $(".sideDX_main").append(elemento);
-          $(".input_messaggio_new").val("");
-        }
+        inviaMessaggio();
       };
     }
   )
-  // /quando l'utente digita ENTER da tastiera
 
+  $(".wrap_send .fa-paper-plane").click (
+    function () {
+      inviaMessaggio();
+  });
 
-
-
+  // funzione che prende il testo digitato nell'input e lo aggiunge come messaggio alla chat
+  function inviaMessaggio () {
+    // memorizza il testo digitato nell'input del messaggio
+    var inputValue = $(".input_messaggio_new").val();
+    // controlla se è stata inserita almeno una lettera nell'input
+    if (inputValue.length > 0) {
+      // seleziona e clona l'elemento del messaggio
+      var elemento = $(".template > .msg_int").clone();
+      // scrive nel clone il testo del messaggio preso dall'input
+      elemento.find(".text_messaggio").text(inputValue);
+      // scrive nel clone l'ora attuale
+      elemento.find(".ora_messaggio").text(getOreMinuti());
+      // appende l'elemento messaggio alla lista dei messaggi
+      $(".sideDX_main").append(elemento);
+      // pulisce l'input del messaggio
+      $(".input_messaggio_new").val("");
+      // $(".sideDX_main").scrollTop = "2000";
+    }
+  }
 
 
 

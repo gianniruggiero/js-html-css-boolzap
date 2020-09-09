@@ -251,6 +251,12 @@ main {
  font-size: 18px;
 }
 
+.wrap_send .fa-paper-plane:hover {
+  cursor: pointer;
+}
+
+
+
 .input_messaggio_new {
   width: calc(100% - 120px);
   height: 36px;
