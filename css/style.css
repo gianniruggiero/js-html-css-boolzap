@@ -275,7 +275,7 @@ main {
 
 .sideDX .messaggio {
   display: flex;
-  max-width: 250px;
+  /* max-width: 250px; */
   border-radius: 10px;
 }
 
@@ -283,7 +283,6 @@ main {
   font-size: 12px;
   padding: 15px 5px 15px 15px;
   font-weight: bold;
-
 }
 
 .sideDX .messaggio .ora_messaggio {
@@ -292,6 +291,10 @@ main {
   color: #cccccc;
   padding: 0 5px 5px 0px;
   align-self: flex-end;
+}
+
+.hide_template {
+  display: none;
 }
 
 .msg_ext {
