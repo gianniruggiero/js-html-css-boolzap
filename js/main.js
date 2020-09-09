@@ -4,6 +4,11 @@ $(document).ready (function() {
     var d = new Date();
     var h = d.getHours();
     var m = d.getMinutes();
+
+    // per avere i minuti sempre con due muerig
+     if (m < 10) {
+       m = "0" + String(m);
+     }
     var ora = String(h)+":"+String(m);
     return ora;
   }
@@ -18,16 +23,16 @@ $(document).ready (function() {
         var inputValue = $(".input_messaggio_new").val();
         console.log(inputValue);
         if (inputValue.length > 0) {
-          var elemento = $(".template").clone();
+
+          var elemento = $(".template > .msg_int").clone();
+
           elemento.find(".text_messaggio").text(inputValue);
           elemento.find(".ora_messaggio").text(getOreMinuti());
           console.log(elemento.find(".text_messaggio").text());
           console.log("hasClass: " + elemento.hasClass("hide_template"));
-          elemento.removeClass("hide_template");
-          elemento.removeClass("template");
+          // elemento.removeClass("hide_template");
+          // elemento.removeClass("template");
           console.log("hasClass dopo il remove: " + elemento.hasClass("hide_template"));
-          // console.log("text: " + elemento.children("text_messaggio").text());
-          // elemento.append(inputValue+" ");
           $(".sideDX_main").append(elemento);
           $(".input_messaggio_new").val("");
         }

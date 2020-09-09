@@ -293,7 +293,7 @@ main {
   align-self: flex-end;
 }
 
-.hide_template {
+.template {
   display: none;
 }
 
