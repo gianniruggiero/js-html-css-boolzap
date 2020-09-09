@@ -18,14 +18,14 @@ $(document).ready (function() {
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
     function(event){
-      console.log("event.which: " + event.which);
       // controlla se ha digitato spazio come primo carattere nell'input
       if (event.which == 32 && $(".input_messaggio_new").val() == " ") {
         // pulisce l'input del messaggio
         $(".input_messaggio_new").val("");
       } else if (event.which == 13) {
         // l'utente ha digitato invio da tasitera
-        inviaMessaggio();
+        inviaMessaggio("msg_int", $(".input_messaggio_new").val());
+        setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
       };
     }
   )
@@ -33,23 +33,24 @@ $(document).ready (function() {
   // al click sull'icona invio, aggiunge il testo dell'input alla chat
   $(".send_message").click (
     function () {
-      inviaMessaggio();
+      inviaMessaggio("msg_int", $(".input_messaggio_new").val());
+      setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
   });
 
   // funzione che prende il testo digitato nell'input e lo aggiunge come messaggio alla chat
-  function inviaMessaggio () {
+  function inviaMessaggio (msg, txt) {
     // memorizza il testo digitato nell'input del messaggio
-    var inputValue = $(".input_messaggio_new").val();
+    // var inputValue = $(".input_messaggio_new").val();
     // controlla se è stata inserita almeno una lettera nell'input
-    if (inputValue != "") {
+    if (txt != "") {
       // seleziona e clona l'elemento del messaggio
       var elemento = $(".template .wrap_messaggio").clone();
       // scrive nel clone il testo del messaggio preso dall'input
-      elemento.find(".text_messaggio").text(inputValue);
+      elemento.find(".text_messaggio").text(txt);
       // scrive nel clone l'ora attuale
       elemento.find(".ora_messaggio").text(getOreMinuti());
       // aggiunge la classe per il messaggio interno
-      elemento.addClass("msg_int");
+      elemento.addClass(msg);
       // appende l'elemento messaggio alla lista dei messaggi
       $(".sideDX_main").append(elemento);
       // pulisce l'input del messaggio
