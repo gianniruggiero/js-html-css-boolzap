@@ -43,7 +43,7 @@ $(document).ready (function() {
     function(event){
       // controlla se ha digitato spazio come primo carattere nell'input
       if (event.which == 32 && $(".input_messaggio_new").val() == " ") {
-        // pulisce l'input del messaggio
+        // pulisce l'input del messaggio perchè ha digitato come primo carattere uno spazio vuoto (con la barra)
         $(".input_messaggio_new").val("");
       } else if (event.which == 13) {
         // l'utente ha digitato invio da tasitera
@@ -60,8 +60,8 @@ $(document).ready (function() {
       setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
   });
 
-  // quando l'utente digita nell'input ricerca della sideSX,
-  // fa comprarire nella lista della chat solo i nomi delle chat che contengono la stringa digitata
+  // KEYUP input Ricerca // quando l'utente digita nell'input ricerca della sideSX,
+  // nella lista della chat compaiono solo i nomi delle chat che contengono la stringa digitata
   $(".input_cerca").keyup(
     function(event){
        // Selezioniamo tutti i div .chat e cicliamo con .each
@@ -72,34 +72,16 @@ $(document).ready (function() {
         var carDigitati = $(".input_cerca").val().toLowerCase();
         // verifca se il nome della chat corrente contiene la string digitata in input ricerca
         var chat_trovata = strNomeChat.includes(carDigitati);
-        // console.log("strNomeChat: " + strNomeChat);
-        // console.log("carDigitati: " + carDigitati);
-        // console.log("includes? "+chat_trovata);
         if (chat_trovata) {
-          console.log("SHOW");
           // rende visibile la chat
           $(this).removeClass("chat_hide");
         } else {
           // nasconde la chat
-          console.log("HIDE");
           $(this).addClass("chat_hide");
         }
-        var elemento = $(this);
-        console.log(elemento);
-        // var num_chat = $(this).getAttribute ("code_chat");
+        // var num_chat = $(this).attr("code_chat");
         // console.log(num_chat);
       });
-
-
-      // // controlla se ha digitato spazio come primo carattere nell'input
-      // if (event.which == 32 && $(".input_messaggio_new").val() == " ") {
-      //   // pulisce l'input del messaggio
-      //   $(".input_messaggio_new").val("");
-      // } else if (event.which == 13) {
-      //   // l'utente ha digitato invio da tasitera
-      //   inviaMessaggio("msg_int", $(".input_messaggio_new").val());
-      //   setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
-      // };
   })
 
 });

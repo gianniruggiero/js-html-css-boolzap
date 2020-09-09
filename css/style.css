@@ -73,14 +73,20 @@ main {
 .sideSX_top_avatar {
   height: 100%;
   border-radius: 50%;
+  overflow: hidden;
 }
 
-.sideSX_top_console, .sideDX_top_console {
+.sideSX_top_avatar img {
+  height: 100%;
+}
+
+.ul_ico_topSX, .ul_ico_topDX {
   display: flex;
   align-items: center;
+  list-style: none;
 }
 
-.sideSX_top_console i, .sideDX_top_console i {
+.ul_ico_topSX i, .ul_ico_topDX i {
   color: #b1b1b1;
   margin: 0 7px;
 }
@@ -173,8 +179,17 @@ main {
   border-bottom: 1px solid #f5f5f5;
 }
 
+.chat:hover {
+  background-color: #f5f5f5;
+  /* background-color: red; */
+}
+
 .chat_hide {
   display: none;
+}
+
+.chat_attiva {
+  background-color: #e9ebeb;
 }
 
 .contatto_avatar {
