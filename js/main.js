@@ -37,7 +37,6 @@ $(document).ready (function() {
     }
   }
 
-
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
     function(event){
@@ -47,8 +46,11 @@ $(document).ready (function() {
         $(".input_messaggio_new").val("");
       } else if (event.which == 13) {
         // l'utente ha digitato invio da tasitera
-        inviaMessaggio("msg_int", $(".input_messaggio_new").val());
-        setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
+        var text_msg = $(".input_messaggio_new").val();
+        if (text_msg != "") {
+          inviaMessaggio("msg_int", text_msg);
+          setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
+        }
       };
     }
   )
@@ -56,8 +58,11 @@ $(document).ready (function() {
   // al click sull'icona invio, aggiunge il testo dell'input alla chat
   $(".send_message").click (
     function () {
-      inviaMessaggio("msg_int", $(".input_messaggio_new").val());
-      setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
+      var text_msg = $(".input_messaggio_new").val();
+      if (text_msg != "") {
+        inviaMessaggio("msg_int", text_msg);
+        setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
+      }
   });
 
   // KEYUP input Ricerca // quando l'utente digita nell'input ricerca della sideSX,
