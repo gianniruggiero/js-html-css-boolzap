@@ -134,11 +134,10 @@ $(".chat").hover (
   },
 );
 
-
 // al CLICK sul messaggio apre pannello per cancellare il ora_messaggio
-$(".sideDX_main").on("click", ".messaggio",
+$(".sideDX_main").on("click", ".apri_cancella",
   function () {
-    $(this).find(".panel_delete").addClass("delete_show");
+    $(this).siblings(".panel_delete").addClass("delete_show");
     panel_delete_open = true;
 });
 
@@ -146,6 +145,7 @@ $(".sideDX_main").on("click", ".messaggio",
 $(".sideDX_main").on("mouseleave", ".messaggio",
   function () {
     $(this).find(".panel_delete").removeClass("delete_show");
+    $(this).find(".apri_cancella").removeClass("visibile");
     panel_delete_open = false;
 });
 
@@ -155,6 +155,13 @@ $(".sideDX_main").on("click", ".cancella_msg_txt",
     var msg_to_delete = $(this).parents(".wrap_messaggio");
     msg_to_delete.remove();
 });
+
+$(".sideDX_main").on("mouseenter", ".messaggio",
+    function () {
+    $(this).find(".apri_cancella").addClass("visibile");
+});
+
+
 
 // // al CLICK su "info messaggio" chiude il pannello per cancellare il messaggio
 // $(".sideDX_main").on("click", ".info_messaggio",
