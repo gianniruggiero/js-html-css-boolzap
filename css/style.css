@@ -184,11 +184,19 @@ main {
 }
 
 .chat_attiva {
-  background-color: #e9ebeb;
+  background-color: #ebebeb;
 }
 
-.chat:hover {
+/* .chat:hover {
   background-color: #f5f5f5;
+} */
+
+.grigio_mouse_enter {
+  background-color: #f5f5f5;
+}
+
+.bianco_mouse_leave {
+  background-color: #fff;
 }
 
 .contatto_avatar {
@@ -295,7 +303,7 @@ main {
   display: none;
 }
 
-.active_chat {
+.conversazione_attiva {
   display: block;
 }
 

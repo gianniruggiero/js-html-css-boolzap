@@ -1,5 +1,8 @@
 $(document).ready (function() {
 
+  // indice della chat attiva, a cui fare riferimento per elenco "chat" e "messaggi_chat"
+  var active_chat = 0;
+
   // funziona che ritorna l'ora attuale nel formato H:MM
   function getOreMinuti() {
     var d = new Date();
@@ -17,9 +20,6 @@ $(document).ready (function() {
 
   // funzione che prende il testo digitato nell'input e lo aggiunge come messaggio alla chat
   function inviaMessaggio (msg, txt) {
-    // memorizza il testo digitato nell'input del messaggio
-    // var inputValue = $(".input_messaggio_new").val();
-    // controlla se è stata inserita almeno una lettera nell'input
     if (txt != "") {
       // seleziona e clona l'elemento del messaggio
       var elemento = $(".template .wrap_messaggio").clone();
@@ -29,8 +29,8 @@ $(document).ready (function() {
       elemento.find(".ora_messaggio").text(getOreMinuti());
       // aggiunge la classe per il messaggio interno
       elemento.addClass(msg);
-      // seleziona la chat attiva a cui aggiungere il messaggio
-      var destinazione = $( "[data-messaggi='0']" );
+      // seleziona la chat di messaggi attiva a cui aggiungere il messaggio
+      var destinazione = $( "[data-conversazione=" + "'" + active_chat + "' ]" );
       // appende l'elemento messaggio alla lista dei messaggi
       $(destinazione).append(elemento);
       // pulisce l'input del messaggio
@@ -39,8 +39,6 @@ $(document).ready (function() {
       $(".sideDX_main").scrollTop(10000);
     }
   }
-
-  var active_chat = 0;
 
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
@@ -60,7 +58,7 @@ $(document).ready (function() {
     }
   )
 
-  // al click sull'icona invio, aggiunge il testo dell'input alla chat
+  // al CLICK sull'icona invio messaggio, aggiunge il testo dell'input alla chat
   $(".send_message").click (
     function () {
       var text_msg = $(".input_messaggio_new").val();
@@ -89,9 +87,51 @@ $(document).ready (function() {
           // nasconde la chat
           $(this).addClass("chat_hide");
         }
-        // var num_chat = $(this).attr("code_chat");
-        // console.log(num_chat);
       });
   })
+
+// al click sulla chat nell'elenco chat della sideSX, carica la lista di messaggi relativi
+$(".chat").click (
+  function () {
+
+    // // seleziona le conversazioni
+    // var element = document.getElementsByClassName('messaggi_chat');
+    // // RESET toglie la classe "convesazine_attiva" all'elemento attualmente attivo
+    // element[active_chat].classList.remove("conversazione_attiva");
+
+
+    // RESET // toglie la classe "conversazione_attiva" a tutti le conversazioni
+    $(".conversazione_attiva").each(function () {
+        $(this).removeClass("conversazione_attiva");
+      }
+    );
+
+
+    // aggiorna la variabile globale active_chat assegnandole l'indice del contatto/chat cliccato
+    active_chat = $(this).attr("data-chat");
+    // prepara la stringa per la ricerca dell'attributo
+    strSel = "[data-conversazione=" + "'" + active_chat + "' ]";
+    // cerca il la conversazione con attributo "data-conversazione" uguale ad active_chat
+    $(strSel).addClass("conversazione_attiva");
+    // RESET // toglie la classe "chat_attiva" (sfondo grigio scuro) a tutti i contatti/chat
+    $('.chat_attiva').each(function () {
+        $(this).removeClass("chat_attiva");
+      }
+    );
+    // aggiunge all'attuale chat cliccata la classe "chat_attiva" (sfondo grigio scuro)
+    $(this).addClass("chat_attiva");
+});
+
+// hover sull'elenco delle chat
+$(".chat").hover (
+  function () {
+    if (!$(this).hasClass("chat_attiva")) {
+      $(this).addClass("grigio_mouse_enter")
+    }
+  },
+  function () {
+    $(this).removeClass("grigio_mouse_enter")
+  },
+);
 
 });
