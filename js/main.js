@@ -93,20 +93,11 @@ $(document).ready (function() {
 // al click sulla chat nell'elenco chat della sideSX, carica la lista di messaggi relativi
 $(".chat").click (
   function () {
-
-    // // seleziona le conversazioni
-    // var element = document.getElementsByClassName('messaggi_chat');
-    // // RESET toglie la classe "convesazine_attiva" all'elemento attualmente attivo
-    // element[active_chat].classList.remove("conversazione_attiva");
-
-
     // RESET // toglie la classe "conversazione_attiva" a tutti le conversazioni
     $(".conversazione_attiva").each(function () {
         $(this).removeClass("conversazione_attiva");
       }
     );
-
-
     // aggiorna la variabile globale active_chat assegnandole l'indice del contatto/chat cliccato
     active_chat = $(this).attr("data-chat");
     // prepara la stringa per la ricerca dell'attributo
@@ -120,6 +111,12 @@ $(".chat").click (
     );
     // aggiunge all'attuale chat cliccata la classe "chat_attiva" (sfondo grigio scuro)
     $(this).addClass("chat_attiva");
+    // imposta come AVATAR nell'header della sideDX l'avatar del contatto/chat cliccato
+    var urlChatClick = $(this).find(".contatto_avatar").attr("src");
+    $(".sideDX_top_avatar").attr("src", urlChatClick);
+    // imposta come NOME nell'header della sideDX l'avatar del contatto/chat cliccato
+    var nomeChatClick = $(this).find(".nome").text();
+    $(".sideDX_top .nome_chat").text(nomeChatClick);
 });
 
 // hover sull'elenco delle chat
@@ -133,5 +130,26 @@ $(".chat").hover (
     $(this).removeClass("grigio_mouse_enter")
   },
 );
+
+
+// al CLICK sul messaggio apre pannello per cancellare il ora_messaggio
+$(".sideDX .messaggio").click (
+  function () {
+    alert("click su messaggio");
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
