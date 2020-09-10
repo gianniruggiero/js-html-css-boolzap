@@ -84,7 +84,7 @@
             <!-- elenco chat -->
             <div class="sideSX_chat">
               <!-- chat   -->
-              <div class="chat chat_attiva" code_chat="0">
+              <div class="chat chat_attiva" data_chat="0">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_1.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -104,7 +104,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="1">
+              <div class="chat" data-chat="1">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_2.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -124,7 +124,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="2">
+              <div class="chat" data-chat="2">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_3.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -144,7 +144,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="3">
+              <div class="chat" data-chat="3">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_4.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -164,7 +164,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="4">
+              <div class="chat" data-chat="4">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_5.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -184,7 +184,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="5">
+              <div class="chat" data-chat="5">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_6.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -204,7 +204,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="6">
+              <div class="chat" data-chat="6">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_7.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -224,7 +224,7 @@
               </div>
               <!-- /chat   -->
               <!-- chat   -->
-              <div class="chat" code_chat="7">
+              <div class="chat" data-chat="7">
                 <!-- immagine avatar contatto -->
                 <img class="contatto_avatar" src="img\avatar_8.jpg" alt="">
                 <!-- /immagine avatar chat -->
@@ -292,30 +292,238 @@
             <!-- /zona top della side DX -->
             <!-- zona main della side DX -->
             <div class="sideDX_main">
-              <!-- messaggio -->
-              <div class="wrap_messaggio msg_int">
-                <div class="messaggio">
-                  <p class="text_messaggio">Ciao come stai?</p>
-                  <span class="ora_messaggio">14.21</span>
+
+              <!-- messaggi della chat index 0 -->
+              <div class="messaggi_chat active_chat" data-messaggi="0">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
                 </div>
-              </div>
-              <!-- /messaggio -->
-              <!-- messaggio -->
-              <div class="wrap_messaggio msg_ext">
-                <div class="messaggio">
-                  <p class="text_messaggio">Ciao come stai?</p>
-                  <span class="ora_messaggio">14.21</span>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
                 </div>
-              </div>
-              <!-- /messaggio -->
-              <!-- messaggio -->
-              <div class="wrap_messaggio msg_int">
-                <div class="messaggio">
-                  <p class="text_messaggio">Ciao come stai?</p>
-                  <span class="ora_messaggio">14.21</span>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
                 </div>
+                <!-- /messaggio -->
               </div>
-              <!-- /messaggio -->
+              <!-- messaggi della chat index 0 -->
+
+              <!-- messaggi della chat index 1 -->
+              <div class="messaggi_chat" data-messaggi="1">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 1 -->
+
+              <!-- messaggi della chat index 2 -->
+              <div class="messaggi_chat" data-messaggi="2">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 2 -->
+
+              <!-- messaggi della chat index 3 -->
+              <div class="messaggi_chat" data-messaggi="3">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 3 -->
+
+              <!-- messaggi della chat index 4 -->
+              <div class="messaggi_chat" data-messaggi="4">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 4 -->
+
+              <!-- messaggi della chat index 5 -->
+              <div class="messaggi_chat" data-messaggi="5">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 5 -->
+
+              <!-- messaggi della chat index 6 -->
+              <div class="messaggi_chat" data-messaggi="6">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 6 -->
+
+              <!-- messaggi della chat index 7 -->
+              <div class="messaggi_chat" data-messaggi="7">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 7 -->
 
               <!-- TEMPLATE messaggio -->
               <div class="template">

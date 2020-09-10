@@ -29,14 +29,18 @@ $(document).ready (function() {
       elemento.find(".ora_messaggio").text(getOreMinuti());
       // aggiunge la classe per il messaggio interno
       elemento.addClass(msg);
+      // seleziona la chat attiva a cui aggiungere il messaggio
+      var destinazione = $( "[data-messaggi='0']" );
       // appende l'elemento messaggio alla lista dei messaggi
-      $(".sideDX_main").append(elemento);
+      $(destinazione).append(elemento);
       // pulisce l'input del messaggio
       $(".input_messaggio_new").val("");
       // fa scorrere la sbarra verso il basso per visualizzare il nuovo messaggio
       $(".sideDX_main").scrollTop(10000);
     }
   }
+
+  var active_chat = 0;
 
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
@@ -75,9 +79,9 @@ $(document).ready (function() {
         // memorizza in strNomeChat il nome della chat corrente
         var strNomeChat = $(this).find(".nome").text().toLowerCase();
         // memorizza in carDigitati i caratteri attualmente presenti nell'input ricerca
-        var carDigitati = $(".input_cerca").val().toLowerCase();
+        var strInput = $(".input_cerca").val().toLowerCase();
         // verifca se il nome della chat corrente contiene la string digitata in input ricerca
-        var chat_trovata = strNomeChat.includes(carDigitati);
+        var chat_trovata = strNomeChat.includes(strInput);
         if (chat_trovata) {
           // rende visibile la chat
           $(this).removeClass("chat_hide");
