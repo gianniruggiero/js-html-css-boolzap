@@ -370,15 +370,36 @@ main {
 
 .panel_delete {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  bottom: -60px;
+  right: 0px;
   width: 150px;
   height: 60px;
   background-color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 20px grey;
+  font-size: 12px;
+  font-weight: 700;
   text-align: center;
   display: none;
+  z-index: 10;
 }
 
+.panel_delete p {
+  margin: 10px 0px;
+}
+
+.panel_delete p:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.delete_show {
+  display: block;
+}
+
+.hide_messaggio {
+  display: none;
+}
 
 /* MEDIA QUERY SM */
 

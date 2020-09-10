@@ -3,6 +3,10 @@ $(document).ready (function() {
   // indice della chat attiva, a cui fare riferimento per elenco "chat" e "messaggi_chat"
   var active_chat = 0;
 
+  // booleana true se il pannello per cancellare il messaggio della chat è visibile
+  var panel_delete_open = false;
+
+
   // funziona che ritorna l'ora attuale nel formato H:MM
   function getOreMinuti() {
     var d = new Date();
@@ -16,7 +20,6 @@ $(document).ready (function() {
     var ora = String(h)+":"+String(m);
     return ora;
   }
-  console.log(getOreMinuti());
 
   // funzione che prende il testo digitato nell'input e lo aggiunge come messaggio alla chat
   function inviaMessaggio (msg, txt) {
@@ -133,15 +136,35 @@ $(".chat").hover (
 
 
 // al CLICK sul messaggio apre pannello per cancellare il ora_messaggio
-$(".sideDX .messaggio").click (
+$(".sideDX_main").on("click", ".messaggio",
   function () {
-    alert("click su messaggio");
-
+    $(this).find(".panel_delete").addClass("delete_show");
+    panel_delete_open = true;
 });
 
+// al MOUSE LEAVE dal pannello per cancellare, chiude il pannello
+$(".sideDX_main").on("mouseleave", ".messaggio",
+  function () {
+    $(this).find(".panel_delete").removeClass("delete_show");
+    panel_delete_open = false;
+});
 
+// al CLICK su "cancella messaggio" cancellare il messaggio
+$(".sideDX_main").on("click", ".cancella_msg_txt",
+  function () {
+    var msg_to_delete = $(this).parents(".wrap_messaggio");
+    msg_to_delete.remove();
+});
 
+// // al CLICK su "info messaggio" chiude il pannello per cancellare il messaggio
+// $(".sideDX_main").on("click", ".info_messaggio",
+//   function () {
+//     alert("click info messaggio");
+//     $(this).parent().removeClass("delete_show");
+//     panel_delete_open = false;
+// });
 
+// al CLICK sul messaggio apre pannello per cancellare il ora_messaggio
 
 
 
