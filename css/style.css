@@ -376,6 +376,7 @@ main {
   height: 60px;
   background-color: white;
   text-align: center;
+  display: none;
 }
 
 
