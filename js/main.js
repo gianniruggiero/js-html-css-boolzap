@@ -138,6 +138,11 @@ $(".chat").hover (
 $(".sideDX_main").on("click", ".apri_cancella",
   function () {
     $(this).siblings(".panel_delete").addClass("delete_show");
+    if ($(this).parents(".wrap_messaggio").hasClass("msg_ext")) {
+      $(this).siblings(".panel_delete").addClass("delete_left");
+    } else {
+      $(this).siblings(".panel_delete").removeClass("delete_right");
+    }
     panel_delete_open = true;
 });
 
@@ -180,6 +185,6 @@ $(".sideDX_main").on("mouseenter", ".messaggio",
 
 
 
-
+// >>>>>>>>   NON SCRIVERE SOTTO QUESTA RIGA !!!   <<<<<<<<
 
 });
