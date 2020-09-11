@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Boolzap</title>
+    </head>
+    <body>
+      <main>
+        <!-- sfondo sezione top -->
+        <section class="top"></section>
+        <!-- /sfondo sezione top -->
+        <!-- sfondo sezione bottom -->
+        <section class="bottom"></section>
+        <!-- /sfondo sezione bottom -->
+
+        <!-- wrapper generale dell'app -->
+        <div class="wrap_general">
+          <!-- side SX -->
+          <div class="sideSX">
+            <!-- zona TOP della side SX -->
+            <div class="sideSX_top">
+              <!-- contenitore immagine avatar utente -->
+              <div class="wrap_avatar sideSX_top_avatar">
+                <!-- immagine avatar utente principale -->
+                <img src="img\avatar_io.jpg" alt="Image avatar">
+                <!-- /immagine avatar utente principale -->
+              </div>
+              <!-- /contenitore immagine avatar utente -->
+              <!-- listato icone zona Top della sideSX -->
+              <ul class="ul_ico_topSX">
+                <li>
+                  <!-- icona aggiorna -->
+                  <i class="fas fa-circle-notch"></i>
+                  <!-- /icona aggiorna -->
+                </li>
+                <li>
+                  <!-- icona messaggio -->
+                  <i class="fas fa-comment-alt"></i>
+                  <!-- /icona messaggio -->
+                </li>
+                <li>
+                  <!-- icona menu impostazioni -->
+                  <i class="fas fa-ellipsis-v"></i>
+                  <!-- /icona menu impostazioni -->
+                </li>
+              </ul>
+              <!-- /listato icone zona Top della sideSX -->
+            </div>
+            <!-- /zona top della side SX -->
+            <!-- zona NOTIFICHE della side SX -->
+            <div class="sideSX_notifiche">
+              <!-- icona notifiche attivate -->
+              <div class="wrap_ico_no_sound">
+                <i class="fas fa-bell-slash"></i>
+              </div>
+              <!-- /icona notifiche attivate -->
+              <div class="wrap_titoli_notifiche">
+                <!-- titolo notifiche -->
+                <h5>Ricevi notifiche di nuovi messaggi</h5>
+                <!-- /titolo notifiche -->
+                <!-- sottotitolo notifiche -->
+                <h6><a href="#">Attiva notifiche desktop</a></h6>
+                <!-- /sottotitolo notifiche -->
+              </div>
+            </div>
+            <!-- /zona NOTIFICHE della side SX -->
+            <!-- zona CERCA della side SX -->
+            <div class="sideSX_cerca">
+              <!-- icona cerca -->
+              <div class="wrap_ico_cerca">
+                <i class="fas fa-search"></i>
+              </div>
+              <!-- /icona cerca -->
+              <!-- input cerca -->
+              <input class="input_cerca" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+              <!-- /input\ cerca -->
+            </div>
+            <!-- /zona CERCA della side SX -->
+            <!-- elenco chat -->
+            <div class="sideSX_chat">
+              <!-- chat   -->
+              <div class="chat chat_attiva" data-chat="0">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_1.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Michele</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">10.08</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="1">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_2.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Fabio</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">11.18</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="2">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_3.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Samuele</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">12.50</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="3">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_4.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Alessandro B.</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">17.58</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="4">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_5.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Alessandro L.</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">13.25</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="5">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_6.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Claudia</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">16.38</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="6">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_7.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Davide</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">17.58</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+              <!-- chat   -->
+              <div class="chat" data-chat="7">
+                <!-- immagine avatar contatto -->
+                <img class="contatto_avatar" src="img\avatar_8.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_testi_chat">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome">Federico</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="messaggio">Non poteva essere altrimenti</a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+                <!-- ora messaggio -->
+                <span class="ora_messaggio">17.58</span>
+                <!-- ora messaggio -->
+              </div>
+              <!-- /chat   -->
+            </div>
+            <!-- /elenco chat -->
+          </div>
+          <!-- /side SX -->
+
+          <!-- side DX -->
+          <div class="sideDX">
+            <!-- zona top della side DX -->
+            <div class="sideDX_top">
+              <!-- contenitore avatar, nome e ultimo accesso dell'utente -->
+              <div class="wrap_utente">
+                <!-- immagine avatar utente -->
+                <img class="sideDX_top_avatar" src="img\avatar_1.jpg" alt="">
+                <!-- /immagine avatar chat -->
+                <!-- contenitore testi chat -->
+                <div class="wrap_nome_accesso">
+                  <!-- titolo notifiche -->
+                  <h5 class="nome_chat">Michele</h5>
+                  <!-- /titolo notifiche -->
+                  <!-- sottotitolo notifiche -->
+                  <h6 class="accesso_chat">Ultimo accesso oggi alle <time>15.40</time></a></h6>
+                  <!-- /sottotitolo notifiche -->
+                </div>
+                <!-- /contenitore testi chat -->
+              </div>
+              <!-- /contenitore avatar, nome e ultimo accesso dell'utente -->
+              <!-- listato icone zona Top della sideDX -->
+              <ul class="ul_ico_topDX">
+                <li>
+                  <!-- icona cerca -->
+                  <i class="fas fa-search"></i>
+                  <!-- /icona cerca -->
+                </li>
+                <li>
+                  <!-- icona allega -->
+                  <i class="fas fa-paperclip"></i>
+                  <!-- /icona allega -->
+                </li>
+                <li>
+                  <!-- icona menu impostazioni -->
+                  <i class="fas fa-ellipsis-v"></i>
+                  <!-- /icona menu impostazioni -->
+                </li>
+              </ul>
+              <!-- /listato icone zona Top della sideDX -->
+            </div>
+            <!-- /zona top della side DX -->
+            <!-- zona main della side DX -->
+            <div class="sideDX_main">
+
+              <!-- messaggi della chat index 0 -->
+              <div class="messaggi_chat conversazione_attiva" data-conversazione="0">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao MICHELE come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                    <!-- <i class="far fa-angle-down apri_cancella"></i> -->
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 0 -->
+
+              <!-- messaggi della chat index 1 -->
+              <div class="messaggi_chat" data-conversazione="1">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao FABIO come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 1 -->
+
+              <!-- messaggi della chat index 2 -->
+              <div class="messaggi_chat" data-conversazione="2">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao SAMUELE come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 2 -->
+
+              <!-- messaggi della chat index 3 -->
+              <div class="messaggi_chat" data-conversazione="3">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao ALESSANDRO B. come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 3 -->
+
+              <!-- messaggi della chat index 4 -->
+              <div class="messaggi_chat" data-conversazione="4">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao ALESSANDOR L. come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 4 -->
+
+              <!-- messaggi della chat index 5 -->
+              <div class="messaggi_chat" data-conversazione="5">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao CLAUDIA come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 5 -->
+
+              <!-- messaggi della chat index 6 -->
+              <div class="messaggi_chat" data-conversazione="6">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao DAVIDE come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 6 -->
+
+              <!-- messaggi della chat index 7 -->
+              <div class="messaggi_chat" data-conversazione="7">
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao FEDERICO come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_ext">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+                <!-- messaggio -->
+                <div class="wrap_messaggio msg_int">
+                  <div class="messaggio">
+                    <p class="text_messaggio">Ciao come stai?</p>
+                    <span class="ora_messaggio">14.21</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+                <!-- /messaggio -->
+              </div>
+              <!-- messaggi della chat index 7 -->
+
+              <!-- TEMPLATE messaggio -->
+              <div class="template">
+                <div class="wrap_messaggio">
+                  <div class="messaggio">
+                    <p class="text_messaggio">xtxt</p>
+                    <span class="ora_messaggio">xora</span>
+                    <i class="fas fa-angle-down apri_cancella"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- / TEMPLATE messaggio -->
+
+              <!-- TEMPLATE menu cancella messaggio -->
+              <div class="template_delete">
+                <div class="panel_delete">
+                  <p class="info_messaggio">info messaggio</p>
+                  <p class="cancella_msg_txt">cancella messaggio</p>
+                </div>
+              </div>
+              <!-- / TEMPLATE messaggio -->
+
+            </div>
+            <!-- /zona main della side DX -->
+            <!-- zona bottom della side DX -->
+            <div class="sideDX_bottom">
+              <!-- contenitore icona smile -->
+              <div class="wrap_smile">
+                <!-- /icona smile -->
+                <i class="far fa-smile"></i>
+                <!-- /icona smile -->
+              </div>
+              <!-- /contenitore icona smile -->
+              <!-- input testo nuovo messaggio -->
+              <input class="input_messaggio_new" type="text" name="" value="" placeholder="Scrivi un messaggio">
+              <!-- / input testo nuovo messaggio -->
+              <!-- contenitore icona send -->
+              <div class="wrap_send">
+                <!-- icona microfono -->
+                <i class="fas fa-microphone"></i>
+                <!-- /icona microfono -->
+                <!-- icona send -->
+                <i class="send_message fas fa-paper-plane"></i>
+                <!-- /icona send -->
+              </div>
+              <!-- /contenitore icona send -->
+            </div>
+            <!-- /zona bottom della side DX -->
+          </div>
+          <!-- /side DX -->
+        </div>
+        <!-- /wrapper generale dell'app -->
+      </main>
+      <script src="js/main.js"></script>
+    </body>
+</html>

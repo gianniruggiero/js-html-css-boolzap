@@ -142,12 +142,14 @@ $(".chat").hover (
   // al CLICK su angle-down del messaggio apre pannello menu per cancellare il ora_messaggio
   $(".sideDX_main").on("click", ".apri_cancella",
     function () {
-      $(this).siblings(".panel_delete").addClass("delete_show");
+      var menuCancella = $(".template_delete .panel_delete").clone();
+      $(this).parent().append(menuCancella);
       if ($(this).parents(".wrap_messaggio").hasClass("msg_ext")) {
         $(this).siblings(".panel_delete").addClass("delete_left");
       } else {
         $(this).siblings(".panel_delete").removeClass("delete_right");
       }
+      $(this).siblings(".panel_delete").addClass("delete_show");
       // sette variabili per la gestione della chiusura del mene all'evento CLICK su wrap_general
       panel_delete_open = true;
       click_angle_down = true;
@@ -158,8 +160,8 @@ $(".chat").hover (
     function(){
       // controlla se il menu cancella messaggio è aperto e se è stato fatto click su angle_down
       if (panel_delete_open && !click_angle_down) {
-        $(this).find(".panel_delete").removeClass("delete_show");
         panel_delete_open = false;
+        $(this).find(".conversazione_attiva .panel_delete").remove();
       } else {
         click_angle_down = false;
       }
