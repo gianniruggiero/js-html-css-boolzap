@@ -9,30 +9,6 @@ $(document).ready (function() {
   // varibaile globake per gestione chiusura panel_delete, il menu cancella messaggio al clic in altri punti della pagina
   var click_angle_down = false
 
-  // crea array dei nomi utenti
-  var arrChat = ["Michele", "Fabio", "Samuele", "ALessandro B.", "Alessandro L.", "Claudia", "Davide", "Federico"];
-
-  // crea CHAT CONTTATI
-  for (var i = 0; i < arrChat.length; i++) {
-    // clona il template contatto / chat
-    var chat_clone = $(".template_contatto .chat").clone()
-    // manipola l'oggetto clone
-    var strUrl = "img/avatar_" + (i + 1) + ".jpg";
-    chat_clone.find(".contatto_avatar").attr("src", strUrl);
-    // var i_chat = String(i);
-    chat_clone.attr("data-chat", i);
-    chat_clone.find(".nome").text(arrChat[i]);
-    chat_clone.find(".messaggio").text("Non poteva essere altrimenti");
-    chat_clone.find("ora_messaggio").text("12:45");
-    if (i == 0) {
-      chat_clone.addClass("chat_attiva");
-    }
-    // aggiunge il contatto / chat all'elenco dei arrContatti
-    $(".sideSX_chat").append(chat_clone);
-  }
-
-
-
   // funzione che ritorna l'ora attuale nel formato H:MM
   function getOreMinuti() {
     var d = new Date();
@@ -58,8 +34,11 @@ $(document).ready (function() {
       elemento.find(".ora_messaggio").text(getOreMinuti());
       // aggiunge la classe per il tipo di messaggio (interno o esterno)
       elemento.addClass(msg);
+      // prepara la stringa per la ricerca dell'attributo
+      strSel = "[data-conversazione=" + "'" + active_chat + "' ]";
+      // cerca la conversazione con attributo "data-conversazione" uguale ad active_chat
       // appende l'elemento messaggio alla conversazione attiva
-      $(".conversazione_attiva").append(elemento);
+      $(strSel).append(elemento);
       // pulisce l'input del messaggio
       $(".input_messaggio_new").val("");
       // SCROLL BAR: fa scorrere la scroll-bar barra verso il basso per visualizzare il nuovo messaggio
@@ -67,6 +46,49 @@ $(document).ready (function() {
       $(".sideDX_main").scrollTop(scrollVal);
     }
   }
+
+
+  // crea array dei nomi utenti
+  var arrChat = ["Michele", "Fabio", "Samuele", "Alessandro B.", "Alessandro L.", "Claudia", "Davide", "Federico"];
+
+  // crea CHAT CONTTATI
+  for (var i = 0; i < arrChat.length; i++) {
+    // clona il template contatto / chat
+    var chat_clone = $(".template_contatto .chat").clone()
+    // manipola l'oggetto clone
+    var strUrl = "img/avatar_" + (i + 1) + ".jpg";
+    chat_clone.find(".contatto_avatar").attr("src", strUrl);
+    // var i_chat = String(i);
+    chat_clone.attr("data-chat", i);
+    chat_clone.find(".nome").text(arrChat[i]);
+    chat_clone.find(".messaggio").text("Non poteva essere altrimenti");
+    chat_clone.find("ora_messaggio").text("12:45");
+    // rende attiva la prima chat dell'elenco
+    if (i == 0) {
+      chat_clone.addClass("chat_attiva");
+    }
+    // aggiunge il contatto / chat all'elenco dei arrContatti
+    $(".sideSX_chat").append(chat_clone);
+    // crea i messaggi della CONVERSAZIONE con tre messaggi
+    for (var cont = 0; cont < 3; cont++) {
+      active_chat = i;
+      switch (cont) {
+        case 0:
+        inviaMessaggio ("msg_int", "Come stai " + arrChat[i] + " ?");
+          break;
+        case 1:
+        inviaMessaggio ("msg_ext", "Tutto bene, grazie. E tu?");
+          break;
+        case 2:
+        inviaMessaggio ("msg_int", "Alla grandeù!");
+          break;
+        default:
+      }
+    }
+    active_chat = 0;
+  }
+
+
 
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
@@ -165,17 +187,26 @@ $(".chat").hover (
   // al CLICK su angle-down del messaggio apre pannello menu per cancellare il ora_messaggio
   $(".sideDX_main").on("click", ".apri_cancella",
     function () {
-      var menuCancella = $(".template_delete .panel_delete").clone();
-      $(this).parent().append(menuCancella);
-      if ($(this).parents(".wrap_messaggio").hasClass("msg_ext")) {
-        $(this).siblings(".panel_delete").addClass("delete_left");
+      if (panel_delete_open) {
+        // alert("click angle down e panel aperto")
+        console.log($(this).parents(".panel_delete"));
+        $(this).sibligns(".panel_delete").remove();
+        // sette variabili per la gestione della chiusura del mene all'evento CLICK su wrap_general
+        panel_delete_open = false;
+        click_angle_down = false;
       } else {
-        $(this).siblings(".panel_delete").removeClass("delete_right");
+        var menuCancella = $(".template_delete .panel_delete").clone();
+        $(this).parent().append(menuCancella);
+        if ($(this).parents(".wrap_messaggio").hasClass("msg_ext")) {
+          $(this).siblings(".panel_delete").addClass("delete_left");
+        } else {
+          $(this).siblings(".panel_delete").removeClass("delete_right");
+        }
+        $(this).siblings(".panel_delete").addClass("delete_show");
+        // sette variabili per la gestione della chiusura del mene all'evento CLICK su wrap_general
+        panel_delete_open = true;
+        click_angle_down = true;
       }
-      $(this).siblings(".panel_delete").addClass("delete_show");
-      // sette variabili per la gestione della chiusura del mene all'evento CLICK su wrap_general
-      panel_delete_open = true;
-      click_angle_down = true;
   });
 
   // al CLICK in qualunque punto della pagina, se il menu cancella messaggio è aperto, lo chiude
