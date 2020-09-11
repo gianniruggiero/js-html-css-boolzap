@@ -69,7 +69,18 @@ $(document).ready (function() {
     }
     // aggiunge il contatto / chat all'elenco dei arrContatti
     $(".sideSX_chat").append(chat_clone);
-    // crea i messaggi della CONVERSAZIONE con tre messaggi
+
+    // prepara stringa con codice Hmtl per la creazione della conversazione
+    if (i == 0) {
+      // aggiunge la classe "conversazione_attiva" alla prima conversazione
+      var strHtmlChat = '<div class="messaggi_chat conversazione_attiva" data-conversazione="'+ i + '"></div>';
+    } else {
+      var strHtmlChat = '<div class="messaggi_chat" data-conversazione="'+ i + '"></div>';
+    }
+    // aggiunge la conversazione alla pagina
+    $(".sideDX_main").prepend(strHtmlChat);
+
+    // crea 3 messaggi per ogni CONVERSAZIONE
     for (var cont = 0; cont < 3; cont++) {
       active_chat = i;
       switch (cont) {
@@ -80,15 +91,13 @@ $(document).ready (function() {
         inviaMessaggio ("msg_ext", "Tutto bene, grazie. E tu?");
           break;
         case 2:
-        inviaMessaggio ("msg_int", "Alla grandeù!");
+        inviaMessaggio ("msg_int", "Alla grande!");
           break;
         default:
       }
     }
     active_chat = 0;
   }
-
-
 
   // quando l'utente digita ENTER da tastiera, aggiunge il testo dell'input alla chat
   $(".input_messaggio_new").keyup(
@@ -190,7 +199,7 @@ $(".chat").hover (
       if (panel_delete_open) {
         // alert("click angle down e panel aperto")
         console.log($(this).parents(".panel_delete"));
-        $(this).sibligns(".panel_delete").remove();
+        $(this).siblings(".panel_delete").remove();
         // sette variabili per la gestione della chiusura del mene all'evento CLICK su wrap_general
         panel_delete_open = false;
         click_angle_down = false;
