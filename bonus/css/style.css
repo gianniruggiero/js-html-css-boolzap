@@ -340,6 +340,10 @@ main {
   display: none;
 }
 
+.template_contatto {
+  display: none;
+}
+
 .msg_ext {
   justify-content: flex-start;
 }

@@ -9,6 +9,29 @@ $(document).ready (function() {
   // varibaile globake per gestione chiusura panel_delete, il menu cancella messaggio al clic in altri punti della pagina
   var click_angle_down = false
 
+  // crea array dei nomi utenti
+  var arrChat = ["Michele", "Fabio", "Samuele", "ALessandro B.", "Alessandro L.", "Claudia", "Davide", "Federico"];
+
+  // crea CHAT CONTTATI
+  for (var i = 0; i < arrChat.length; i++) {
+    // clona il template contatto / chat
+    var chat_clone = $(".template_contatto .chat").clone()
+    // manipola l'oggetto clone
+    var strUrl = "img/avatar_" + (i + 1) + ".jpg";
+    chat_clone.find(".contatto_avatar").attr("src", strUrl);
+    // var i_chat = String(i);
+    chat_clone.attr("data-chat", i);
+    chat_clone.find(".nome").text(arrChat[i]);
+    chat_clone.find(".messaggio").text("Non poteva essere altrimenti");
+    chat_clone.find("ora_messaggio").text("12:45");
+    if (i == 0) {
+      chat_clone.addClass("chat_attiva");
+    }
+    // aggiunge il contatto / chat all'elenco dei arrContatti
+    $(".sideSX_chat").append(chat_clone);
+  }
+
+
 
   // funzione che ritorna l'ora attuale nel formato H:MM
   function getOreMinuti() {
