@@ -309,6 +309,10 @@ main {
   display: none;
 }
 
+.apri_cancella:hover {
+  cursor: pointer;
+}
+
 .visibile {
   display: block;
 }
@@ -389,19 +393,19 @@ main {
 
 .panel_delete {
   position: absolute;
+  display: none;
+  z-index: 10;
   bottom: -60px;
   right: 0px;
   width: 150px;
   height: 60px;
+  padding: 6px 0px;;
   background-color: white;
   border-radius: 2px;
   box-shadow: 1px 1px 20px grey;
   font-size: 12px;
   font-weight: 700;
   text-align: center;
-  display: none;
-  z-index: 10;
-  padding: 6px 0px;;
 }
 
 .delete_left {

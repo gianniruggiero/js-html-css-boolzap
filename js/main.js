@@ -6,6 +6,9 @@ $(document).ready (function() {
   // booleana true se il pannello per cancellare il messaggio della chat è visibile
   var panel_delete_open = false;
 
+  // per gestione chiusura panel_delete, il menu cancella messaggio al clic in altri punti della pagina
+  var click_angle_down = false
+
 
   // funziona che ritorna l'ora attuale nel formato H:MM
   function getOreMinuti() {
@@ -39,7 +42,9 @@ $(document).ready (function() {
       // pulisce l'input del messaggio
       $(".input_messaggio_new").val("");
       // fa scorrere la sbarra verso il basso per visualizzare il nuovo messaggio
-      $(".sideDX_main").scrollTop(10000);
+      var scrollVal = $(".sideDX_main").prop("scrollHeight");
+      console.log($(".sideDX_main").prop("scrollHeight"));
+      $(".sideDX_main").scrollTop(scrollVal);
     }
   }
 
@@ -96,30 +101,45 @@ $(document).ready (function() {
 // al click sulla chat nell'elenco chat della sideSX, carica la lista di messaggi relativi
 $(".chat").click (
   function () {
+
     // RESET // toglie la classe "conversazione_attiva" a tutti le conversazioni
-    $(".conversazione_attiva").each(function () {
-        $(this).removeClass("conversazione_attiva");
-      }
-    );
+    $(".messaggi_chat").removeClass("conversazione_attiva");
+    // DEBUG
+    // $(".conversazionnde_attiva").each(function () {
+    //     $(this).removeClass("conversazione_attiva");
+    //   }
+    // );
+
     // aggiorna la variabile globale active_chat assegnandole l'indice del contatto/chat cliccato
     active_chat = $(this).attr("data-chat");
     // prepara la stringa per la ricerca dell'attributo
     strSel = "[data-conversazione=" + "'" + active_chat + "' ]";
     // cerca il la conversazione con attributo "data-conversazione" uguale ad active_chat
     $(strSel).addClass("conversazione_attiva");
+
     // RESET // toglie la classe "chat_attiva" (sfondo grigio scuro) a tutti i contatti/chat
-    $('.chat_attiva').each(function () {
-        $(this).removeClass("chat_attiva");
-      }
-    );
+    $(".chat").removeClass("chat_attiva");
+    // DEBUG
+    // $('.chat_attiva').each(function () {
+    //     $(this).removeClass("chat_attiva");
+    //   }
+    // );
     // aggiunge all'attuale chat cliccata la classe "chat_attiva" (sfondo grigio scuro)
     $(this).addClass("chat_attiva");
     // imposta come AVATAR nell'header della sideDX l'avatar del contatto/chat cliccato
     var urlChatClick = $(this).find(".contatto_avatar").attr("src");
     $(".sideDX_top_avatar").attr("src", urlChatClick);
-    // imposta come NOME nell'header della sideDX l'avatar del contatto/chat cliccato
+    // imposta come NOME nell'header della sideDX il nome del contatto/chat cliccato
     var nomeChatClick = $(this).find(".nome").text();
     $(".sideDX_top .nome_chat").text(nomeChatClick);
+    // imposta come ORA ULTIMO ACCESSO nell'header della sideDX l'ora del contatto/chat cliccato
+    var oraChatClick = $(this).find(".ora_messaggio").text();
+    $(".sideDX_top .accesso_chat time").text(oraChatClick);
+
+    // fa scorrere la sbarra verso il basso per visualizzare il nuovo messaggio
+    var scrollVal = $(".sideDX_main").prop("scrollHeight");
+    $(".sideDX_main").scrollTop(scrollVal);
+
 });
 
 // hover sull'elenco delle chat
@@ -137,6 +157,7 @@ $(".chat").hover (
 // al CLICK sul messaggio apre pannello per cancellare il ora_messaggio
 $(".sideDX_main").on("click", ".apri_cancella",
   function () {
+    // $(this).siblings(".panel_delete").toggle();
     $(this).siblings(".panel_delete").addClass("delete_show");
     if ($(this).parents(".wrap_messaggio").hasClass("msg_ext")) {
       $(this).siblings(".panel_delete").addClass("delete_left");
@@ -144,15 +165,32 @@ $(".sideDX_main").on("click", ".apri_cancella",
       $(this).siblings(".panel_delete").removeClass("delete_right");
     }
     panel_delete_open = true;
+    click_angle_down = true;
+    console.log("CLICK angledown panel_delete_open: " + panel_delete_open);
 });
 
+  $(document).on("click", ".wrap_general",
+    function(){
+      if (panel_delete_open && !click_angle_down) {
+        $(this).find(".panel_delete").removeClass("delete_show");
+        panel_delete_open = false;
+      } else {
+        click_angle_down = false;
+      }
+    }
+  );
+
 // al MOUSE LEAVE dal pannello per cancellare, chiude il pannello
-$(".sideDX_main").on("mouseleave", ".messaggio",
-  function () {
-    $(this).find(".panel_delete").removeClass("delete_show");
-    $(this).find(".apri_cancella").removeClass("visibile");
-    panel_delete_open = false;
-});
+
+// DEBUG
+// $(".sideDX_main").on("mouseleave", ".messaggio",
+//   function () {
+//     $(this).find(".panel_delete").removeClass("delete_show");
+//     $(this).find(".apri_cancella").removeClass("visibile");
+//     panel_delete_open = false;
+// });
+
+
 
 // al CLICK su "cancella messaggio" cancellare il messaggio
 $(".sideDX_main").on("click", ".cancella_msg_txt",
