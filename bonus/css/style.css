@@ -344,6 +344,10 @@ main {
   display: none;
 }
 
+.template_conversazione {
+  display: none;
+}
+
 .msg_ext {
   justify-content: flex-start;
 }

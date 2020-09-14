@@ -24,7 +24,7 @@ $(document).ready (function() {
   }
 
   // funzione che prende il testo digitato nell'input e lo aggiunge come messaggio alla chat
-  function inviaMessaggio (msg, txt) {
+  function inviaMessaggio (msg, txt, chatAttiva) {
     if (txt != "") {
       // seleziona e clona l'elemento del messaggio
       var elemento = $(".template .wrap_messaggio").clone();
@@ -35,7 +35,7 @@ $(document).ready (function() {
       // aggiunge la classe per il tipo di messaggio (interno o esterno)
       elemento.addClass(msg);
       // prepara la stringa per la ricerca dell'attributo
-      strSel = "[data-conversazione=" + "'" + active_chat + "' ]";
+      strSel = "[data-conversazione=" + "'" + chatAttiva + "' ]";
       // cerca la conversazione con attributo "data-conversazione" uguale ad active_chat
       // appende l'elemento messaggio alla conversazione attiva
       $(strSel).append(elemento);
@@ -85,13 +85,13 @@ $(document).ready (function() {
       active_chat = i;
       switch (cont) {
         case 0:
-        inviaMessaggio ("msg_int", "Come stai " + arrChat[i] + " ?");
+        inviaMessaggio ("msg_int", "Come stai " + arrChat[i] + " ?", active_chat);
           break;
         case 1:
-        inviaMessaggio ("msg_ext", "Tutto bene, grazie. E tu?");
+        inviaMessaggio ("msg_ext", "Tutto bene, grazie. E tu?", active_chat);
           break;
         case 2:
-        inviaMessaggio ("msg_int", "Alla grande!");
+        inviaMessaggio ("msg_int", "Alla grande!", active_chat);
           break;
         default:
       }
@@ -111,8 +111,12 @@ $(document).ready (function() {
         var text_msg = $(".input_messaggio_new").val();
         // crea nuovo messaggio e relativa risposta
         if (text_msg != "") {
-          inviaMessaggio("msg_int", text_msg);
-          setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
+          // definisce su qualce chat appendere il messaggio, per evitare bug se si cambia chat prima dello scadere del tempo del setTimeout
+          var chatInd = active_chat;
+          // scrive il messaggio dell'utente
+          inviaMessaggio("msg_int", text_msg, chatInd);
+          // dopo 1 secondo scrive la rispota del contatto
+          setTimeout(function(){inviaMessaggio("msg_ext", "ok", chatInd); }, 1000);
         }
       };
     }
@@ -125,8 +129,12 @@ $(document).ready (function() {
       var text_msg = $(".input_messaggio_new").val();
       // crea nuovo messaggio e relativa risposta
       if (text_msg != "") {
-        inviaMessaggio("msg_int", text_msg);
-        setTimeout(function(){inviaMessaggio("msg_ext", "ok"); }, 1000);
+        // definisce su qualce chat appendere il messaggio, per evitare bug se si cambia chat prima dello scadere del tempo del setTimeout
+        var chatInd = active_chat;
+        // scrive il messaggio dell'utente
+        inviaMessaggio("msg_int", text_msg, chatInd);
+        // dopo 1 secondo scrive la rispota del contatto
+        setTimeout(function(){inviaMessaggio("msg_ext", "ok", chatInd); }, 1000);
       }
   });
 
